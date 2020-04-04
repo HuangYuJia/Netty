@@ -19,9 +19,11 @@
 - websocket长链接 即时通讯(聊天)  允许只传递数据本身而不需要传递header等,极大程度上降低数据传输的压力  (主动关闭双方是能感知的)  
 - (非主动)心跳检测,定期时间内没有心跳包,就会主动释放掉socket链接
 
-- neetty:
+- netty:
 - 1.netty可以作为rpc通信的框架,实现远程调用,基于socket
 - 2.长连接的服务器,基于websocket
 - 3.http服务器,不是基于servlet规范
 
 - C:\Users\黄育佳\.gradle\caches\modules-2\files-2.1\io.netty\netty-all\4.1.10.Final
+
+- netty客户端请求完成后通过判断是http1.1(长链接keep-alive时间长度)或者1.0(短连接)来控制服务器和客户端断开

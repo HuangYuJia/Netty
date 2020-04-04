@@ -26,12 +26,8 @@ logs/
 /nbdist/
 /.nb-gradle/
 build/
+out/
 
 ### VS Code ###
 .vscode/
-.gitignore
 .gradle/
-README.md
-build.gradle
-settings.gradle
-src/
