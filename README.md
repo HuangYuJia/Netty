@@ -27,3 +27,15 @@
 - C:\Users\黄育佳\.gradle\caches\modules-2\files-2.1\io.netty\netty-all\4.1.10.Final
 
 - netty客户端请求完成后通过判断是http1.1(长链接keep-alive时间长度)或者1.0(短连接)来控制服务器和客户端断开
+
+- WebSocketFrame有六种帧
+- BinaryWebSocketFrame  二进制
+- CloseWebSocketFrame   关闭
+- ContinuationWebSocketFrame 还会有数据,相同的一次请求
+- PingWebSocketFrame  心跳
+- PongWebSocketFrame  返回心跳
+- TextWebSocketFrame  普通文本
+
+- websocket一旦建立上以后,整个请求和响应都是已经存在的websocket长连接之上进行的,这个和以前所用的http区别是非常大的
+- 注意:开飞行模式或者非正常退出,客户端和服务器端之前的连接是感知不到断掉的...(通过心跳包来解决这一问题)
+- websocket注意事项：页面刷新长连接会被关闭,其实进入当前页面建立长连接的目的就是页面不需要用F5来刷新,所有数据自动实时刷新,如果还是用F5刷页面那就没有意义了
