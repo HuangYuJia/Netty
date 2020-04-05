@@ -61,3 +61,9 @@ PRC传输基于socket WebServlet基于http
 - https://developers.google.com/protocol-buffers/docs/javatutorial
 - https://developers.google.com/protocol-buffers/docs/proto
 
+- apache thrift 使用
+- http://thrift.apache.org/
+- http://thrift.apache.org/docs/install/
+- https://downloads.apache.org/thrift/0.10.0/
+- https://blog.csdn.net/liulongling/article/details/51886626
+- thrift --gen java src/thrift/data.thrift
