@@ -14,20 +14,1334 @@ public final class MyDataInfo {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface MyMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.kingsoft.protobuf.MyMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required .com.kingsoft.protobuf.MyMessage.DataType data_type = 1;</code>
+     */
+    boolean hasDataType();
+    /**
+     * <code>required .com.kingsoft.protobuf.MyMessage.DataType data_type = 1;</code>
+     */
+    com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.DataType getDataType();
+
+    /**
+     * <code>optional .com.kingsoft.protobuf.Person person = 2;</code>
+     */
+    boolean hasPerson();
+    /**
+     * <code>optional .com.kingsoft.protobuf.Person person = 2;</code>
+     */
+    com.kingsoft.netty.sixthexample.MyDataInfo.Person getPerson();
+    /**
+     * <code>optional .com.kingsoft.protobuf.Person person = 2;</code>
+     */
+    com.kingsoft.netty.sixthexample.MyDataInfo.PersonOrBuilder getPersonOrBuilder();
+
+    /**
+     * <code>optional .com.kingsoft.protobuf.Dog dog = 3;</code>
+     */
+    boolean hasDog();
+    /**
+     * <code>optional .com.kingsoft.protobuf.Dog dog = 3;</code>
+     */
+    com.kingsoft.netty.sixthexample.MyDataInfo.Dog getDog();
+    /**
+     * <code>optional .com.kingsoft.protobuf.Dog dog = 3;</code>
+     */
+    com.kingsoft.netty.sixthexample.MyDataInfo.DogOrBuilder getDogOrBuilder();
+
+    /**
+     * <code>optional .com.kingsoft.protobuf.House house = 4;</code>
+     */
+    boolean hasHouse();
+    /**
+     * <code>optional .com.kingsoft.protobuf.House house = 4;</code>
+     */
+    com.kingsoft.netty.sixthexample.MyDataInfo.House getHouse();
+    /**
+     * <code>optional .com.kingsoft.protobuf.House house = 4;</code>
+     */
+    com.kingsoft.netty.sixthexample.MyDataInfo.HouseOrBuilder getHouseOrBuilder();
+
+    public com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.DataBodyCase getDataBodyCase();
+  }
+  /**
+   * Protobuf type {@code com.kingsoft.protobuf.MyMessage}
+   */
+  public  static final class MyMessage extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.kingsoft.protobuf.MyMessage)
+      MyMessageOrBuilder {
+    // Use MyMessage.newBuilder() to construct.
+    private MyMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MyMessage() {
+      dataType_ = 1;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MyMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.DataType value = com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.DataType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                dataType_ = rawValue;
+              }
+              break;
+            }
+            case 18: {
+              com.kingsoft.netty.sixthexample.MyDataInfo.Person.Builder subBuilder = null;
+              if (dataBodyCase_ == 2) {
+                subBuilder = ((com.kingsoft.netty.sixthexample.MyDataInfo.Person) dataBody_).toBuilder();
+              }
+              dataBody_ =
+                  input.readMessage(com.kingsoft.netty.sixthexample.MyDataInfo.Person.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.kingsoft.netty.sixthexample.MyDataInfo.Person) dataBody_);
+                dataBody_ = subBuilder.buildPartial();
+              }
+              dataBodyCase_ = 2;
+              break;
+            }
+            case 26: {
+              com.kingsoft.netty.sixthexample.MyDataInfo.Dog.Builder subBuilder = null;
+              if (dataBodyCase_ == 3) {
+                subBuilder = ((com.kingsoft.netty.sixthexample.MyDataInfo.Dog) dataBody_).toBuilder();
+              }
+              dataBody_ =
+                  input.readMessage(com.kingsoft.netty.sixthexample.MyDataInfo.Dog.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.kingsoft.netty.sixthexample.MyDataInfo.Dog) dataBody_);
+                dataBody_ = subBuilder.buildPartial();
+              }
+              dataBodyCase_ = 3;
+              break;
+            }
+            case 34: {
+              com.kingsoft.netty.sixthexample.MyDataInfo.House.Builder subBuilder = null;
+              if (dataBodyCase_ == 4) {
+                subBuilder = ((com.kingsoft.netty.sixthexample.MyDataInfo.House) dataBody_).toBuilder();
+              }
+              dataBody_ =
+                  input.readMessage(com.kingsoft.netty.sixthexample.MyDataInfo.House.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.kingsoft.netty.sixthexample.MyDataInfo.House) dataBody_);
+                dataBody_ = subBuilder.buildPartial();
+              }
+              dataBodyCase_ = 4;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.kingsoft.netty.sixthexample.MyDataInfo.internal_static_com_kingsoft_protobuf_MyMessage_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.kingsoft.netty.sixthexample.MyDataInfo.internal_static_com_kingsoft_protobuf_MyMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.class, com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code com.kingsoft.protobuf.MyMessage.DataType}
+     */
+    public enum DataType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>PersonType = 1;</code>
+       */
+      PersonType(1),
+      /**
+       * <code>DogType = 2;</code>
+       */
+      DogType(2),
+      /**
+       * <code>HouseType = 3;</code>
+       */
+      HouseType(3),
+      ;
+
+      /**
+       * <code>PersonType = 1;</code>
+       */
+      public static final int PersonType_VALUE = 1;
+      /**
+       * <code>DogType = 2;</code>
+       */
+      public static final int DogType_VALUE = 2;
+      /**
+       * <code>HouseType = 3;</code>
+       */
+      public static final int HouseType_VALUE = 3;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DataType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static DataType forNumber(int value) {
+        switch (value) {
+          case 1: return PersonType;
+          case 2: return DogType;
+          case 3: return HouseType;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<DataType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          DataType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DataType>() {
+              public DataType findValueByNumber(int number) {
+                return DataType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final DataType[] VALUES = values();
+
+      public static DataType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private DataType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:com.kingsoft.protobuf.MyMessage.DataType)
+    }
+
+    private int bitField0_;
+    private int dataBodyCase_ = 0;
+    private java.lang.Object dataBody_;
+    public enum DataBodyCase
+        implements com.google.protobuf.Internal.EnumLite {
+      PERSON(2),
+      DOG(3),
+      HOUSE(4),
+      DATABODY_NOT_SET(0);
+      private final int value;
+      private DataBodyCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DataBodyCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static DataBodyCase forNumber(int value) {
+        switch (value) {
+          case 2: return PERSON;
+          case 3: return DOG;
+          case 4: return HOUSE;
+          case 0: return DATABODY_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public DataBodyCase
+    getDataBodyCase() {
+      return DataBodyCase.forNumber(
+          dataBodyCase_);
+    }
+
+    public static final int DATA_TYPE_FIELD_NUMBER = 1;
+    private int dataType_;
+    /**
+     * <code>required .com.kingsoft.protobuf.MyMessage.DataType data_type = 1;</code>
+     */
+    public boolean hasDataType() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required .com.kingsoft.protobuf.MyMessage.DataType data_type = 1;</code>
+     */
+    public com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.DataType getDataType() {
+      com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.DataType result = com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.DataType.valueOf(dataType_);
+      return result == null ? com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.DataType.PersonType : result;
+    }
+
+    public static final int PERSON_FIELD_NUMBER = 2;
+    /**
+     * <code>optional .com.kingsoft.protobuf.Person person = 2;</code>
+     */
+    public boolean hasPerson() {
+      return dataBodyCase_ == 2;
+    }
+    /**
+     * <code>optional .com.kingsoft.protobuf.Person person = 2;</code>
+     */
+    public com.kingsoft.netty.sixthexample.MyDataInfo.Person getPerson() {
+      if (dataBodyCase_ == 2) {
+         return (com.kingsoft.netty.sixthexample.MyDataInfo.Person) dataBody_;
+      }
+      return com.kingsoft.netty.sixthexample.MyDataInfo.Person.getDefaultInstance();
+    }
+    /**
+     * <code>optional .com.kingsoft.protobuf.Person person = 2;</code>
+     */
+    public com.kingsoft.netty.sixthexample.MyDataInfo.PersonOrBuilder getPersonOrBuilder() {
+      if (dataBodyCase_ == 2) {
+         return (com.kingsoft.netty.sixthexample.MyDataInfo.Person) dataBody_;
+      }
+      return com.kingsoft.netty.sixthexample.MyDataInfo.Person.getDefaultInstance();
+    }
+
+    public static final int DOG_FIELD_NUMBER = 3;
+    /**
+     * <code>optional .com.kingsoft.protobuf.Dog dog = 3;</code>
+     */
+    public boolean hasDog() {
+      return dataBodyCase_ == 3;
+    }
+    /**
+     * <code>optional .com.kingsoft.protobuf.Dog dog = 3;</code>
+     */
+    public com.kingsoft.netty.sixthexample.MyDataInfo.Dog getDog() {
+      if (dataBodyCase_ == 3) {
+         return (com.kingsoft.netty.sixthexample.MyDataInfo.Dog) dataBody_;
+      }
+      return com.kingsoft.netty.sixthexample.MyDataInfo.Dog.getDefaultInstance();
+    }
+    /**
+     * <code>optional .com.kingsoft.protobuf.Dog dog = 3;</code>
+     */
+    public com.kingsoft.netty.sixthexample.MyDataInfo.DogOrBuilder getDogOrBuilder() {
+      if (dataBodyCase_ == 3) {
+         return (com.kingsoft.netty.sixthexample.MyDataInfo.Dog) dataBody_;
+      }
+      return com.kingsoft.netty.sixthexample.MyDataInfo.Dog.getDefaultInstance();
+    }
+
+    public static final int HOUSE_FIELD_NUMBER = 4;
+    /**
+     * <code>optional .com.kingsoft.protobuf.House house = 4;</code>
+     */
+    public boolean hasHouse() {
+      return dataBodyCase_ == 4;
+    }
+    /**
+     * <code>optional .com.kingsoft.protobuf.House house = 4;</code>
+     */
+    public com.kingsoft.netty.sixthexample.MyDataInfo.House getHouse() {
+      if (dataBodyCase_ == 4) {
+         return (com.kingsoft.netty.sixthexample.MyDataInfo.House) dataBody_;
+      }
+      return com.kingsoft.netty.sixthexample.MyDataInfo.House.getDefaultInstance();
+    }
+    /**
+     * <code>optional .com.kingsoft.protobuf.House house = 4;</code>
+     */
+    public com.kingsoft.netty.sixthexample.MyDataInfo.HouseOrBuilder getHouseOrBuilder() {
+      if (dataBodyCase_ == 4) {
+         return (com.kingsoft.netty.sixthexample.MyDataInfo.House) dataBody_;
+      }
+      return com.kingsoft.netty.sixthexample.MyDataInfo.House.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasDataType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, dataType_);
+      }
+      if (dataBodyCase_ == 2) {
+        output.writeMessage(2, (com.kingsoft.netty.sixthexample.MyDataInfo.Person) dataBody_);
+      }
+      if (dataBodyCase_ == 3) {
+        output.writeMessage(3, (com.kingsoft.netty.sixthexample.MyDataInfo.Dog) dataBody_);
+      }
+      if (dataBodyCase_ == 4) {
+        output.writeMessage(4, (com.kingsoft.netty.sixthexample.MyDataInfo.House) dataBody_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, dataType_);
+      }
+      if (dataBodyCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (com.kingsoft.netty.sixthexample.MyDataInfo.Person) dataBody_);
+      }
+      if (dataBodyCase_ == 3) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, (com.kingsoft.netty.sixthexample.MyDataInfo.Dog) dataBody_);
+      }
+      if (dataBodyCase_ == 4) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, (com.kingsoft.netty.sixthexample.MyDataInfo.House) dataBody_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage)) {
+        return super.equals(obj);
+      }
+      com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage other = (com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage) obj;
+
+      boolean result = true;
+      result = result && (hasDataType() == other.hasDataType());
+      if (hasDataType()) {
+        result = result && dataType_ == other.dataType_;
+      }
+      result = result && getDataBodyCase().equals(
+          other.getDataBodyCase());
+      if (!result) return false;
+      switch (dataBodyCase_) {
+        case 2:
+          result = result && getPerson()
+              .equals(other.getPerson());
+          break;
+        case 3:
+          result = result && getDog()
+              .equals(other.getDog());
+          break;
+        case 4:
+          result = result && getHouse()
+              .equals(other.getHouse());
+          break;
+        case 0:
+        default:
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDataType()) {
+        hash = (37 * hash) + DATA_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + dataType_;
+      }
+      switch (dataBodyCase_) {
+        case 2:
+          hash = (37 * hash) + PERSON_FIELD_NUMBER;
+          hash = (53 * hash) + getPerson().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + DOG_FIELD_NUMBER;
+          hash = (53 * hash) + getDog().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + HOUSE_FIELD_NUMBER;
+          hash = (53 * hash) + getHouse().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.kingsoft.protobuf.MyMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.kingsoft.protobuf.MyMessage)
+        com.kingsoft.netty.sixthexample.MyDataInfo.MyMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.kingsoft.netty.sixthexample.MyDataInfo.internal_static_com_kingsoft_protobuf_MyMessage_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.kingsoft.netty.sixthexample.MyDataInfo.internal_static_com_kingsoft_protobuf_MyMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.class, com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.Builder.class);
+      }
+
+      // Construct using com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        dataType_ = 1;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        dataBodyCase_ = 0;
+        dataBody_ = null;
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.kingsoft.netty.sixthexample.MyDataInfo.internal_static_com_kingsoft_protobuf_MyMessage_descriptor;
+      }
+
+      public com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage getDefaultInstanceForType() {
+        return com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.getDefaultInstance();
+      }
+
+      public com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage build() {
+        com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage buildPartial() {
+        com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage result = new com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.dataType_ = dataType_;
+        if (dataBodyCase_ == 2) {
+          if (personBuilder_ == null) {
+            result.dataBody_ = dataBody_;
+          } else {
+            result.dataBody_ = personBuilder_.build();
+          }
+        }
+        if (dataBodyCase_ == 3) {
+          if (dogBuilder_ == null) {
+            result.dataBody_ = dataBody_;
+          } else {
+            result.dataBody_ = dogBuilder_.build();
+          }
+        }
+        if (dataBodyCase_ == 4) {
+          if (houseBuilder_ == null) {
+            result.dataBody_ = dataBody_;
+          } else {
+            result.dataBody_ = houseBuilder_.build();
+          }
+        }
+        result.bitField0_ = to_bitField0_;
+        result.dataBodyCase_ = dataBodyCase_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage) {
+          return mergeFrom((com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage other) {
+        if (other == com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.getDefaultInstance()) return this;
+        if (other.hasDataType()) {
+          setDataType(other.getDataType());
+        }
+        switch (other.getDataBodyCase()) {
+          case PERSON: {
+            mergePerson(other.getPerson());
+            break;
+          }
+          case DOG: {
+            mergeDog(other.getDog());
+            break;
+          }
+          case HOUSE: {
+            mergeHouse(other.getHouse());
+            break;
+          }
+          case DATABODY_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasDataType()) {
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int dataBodyCase_ = 0;
+      private java.lang.Object dataBody_;
+      public DataBodyCase
+          getDataBodyCase() {
+        return DataBodyCase.forNumber(
+            dataBodyCase_);
+      }
+
+      public Builder clearDataBody() {
+        dataBodyCase_ = 0;
+        dataBody_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int dataType_ = 1;
+      /**
+       * <code>required .com.kingsoft.protobuf.MyMessage.DataType data_type = 1;</code>
+       */
+      public boolean hasDataType() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .com.kingsoft.protobuf.MyMessage.DataType data_type = 1;</code>
+       */
+      public com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.DataType getDataType() {
+        com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.DataType result = com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.DataType.valueOf(dataType_);
+        return result == null ? com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.DataType.PersonType : result;
+      }
+      /**
+       * <code>required .com.kingsoft.protobuf.MyMessage.DataType data_type = 1;</code>
+       */
+      public Builder setDataType(com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage.DataType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        dataType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required .com.kingsoft.protobuf.MyMessage.DataType data_type = 1;</code>
+       */
+      public Builder clearDataType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        dataType_ = 1;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.kingsoft.netty.sixthexample.MyDataInfo.Person, com.kingsoft.netty.sixthexample.MyDataInfo.Person.Builder, com.kingsoft.netty.sixthexample.MyDataInfo.PersonOrBuilder> personBuilder_;
+      /**
+       * <code>optional .com.kingsoft.protobuf.Person person = 2;</code>
+       */
+      public boolean hasPerson() {
+        return dataBodyCase_ == 2;
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Person person = 2;</code>
+       */
+      public com.kingsoft.netty.sixthexample.MyDataInfo.Person getPerson() {
+        if (personBuilder_ == null) {
+          if (dataBodyCase_ == 2) {
+            return (com.kingsoft.netty.sixthexample.MyDataInfo.Person) dataBody_;
+          }
+          return com.kingsoft.netty.sixthexample.MyDataInfo.Person.getDefaultInstance();
+        } else {
+          if (dataBodyCase_ == 2) {
+            return personBuilder_.getMessage();
+          }
+          return com.kingsoft.netty.sixthexample.MyDataInfo.Person.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Person person = 2;</code>
+       */
+      public Builder setPerson(com.kingsoft.netty.sixthexample.MyDataInfo.Person value) {
+        if (personBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataBody_ = value;
+          onChanged();
+        } else {
+          personBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Person person = 2;</code>
+       */
+      public Builder setPerson(
+          com.kingsoft.netty.sixthexample.MyDataInfo.Person.Builder builderForValue) {
+        if (personBuilder_ == null) {
+          dataBody_ = builderForValue.build();
+          onChanged();
+        } else {
+          personBuilder_.setMessage(builderForValue.build());
+        }
+        dataBodyCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Person person = 2;</code>
+       */
+      public Builder mergePerson(com.kingsoft.netty.sixthexample.MyDataInfo.Person value) {
+        if (personBuilder_ == null) {
+          if (dataBodyCase_ == 2 &&
+              dataBody_ != com.kingsoft.netty.sixthexample.MyDataInfo.Person.getDefaultInstance()) {
+            dataBody_ = com.kingsoft.netty.sixthexample.MyDataInfo.Person.newBuilder((com.kingsoft.netty.sixthexample.MyDataInfo.Person) dataBody_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            dataBody_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataBodyCase_ == 2) {
+            personBuilder_.mergeFrom(value);
+          }
+          personBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Person person = 2;</code>
+       */
+      public Builder clearPerson() {
+        if (personBuilder_ == null) {
+          if (dataBodyCase_ == 2) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataBodyCase_ == 2) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+          }
+          personBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Person person = 2;</code>
+       */
+      public com.kingsoft.netty.sixthexample.MyDataInfo.Person.Builder getPersonBuilder() {
+        return getPersonFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Person person = 2;</code>
+       */
+      public com.kingsoft.netty.sixthexample.MyDataInfo.PersonOrBuilder getPersonOrBuilder() {
+        if ((dataBodyCase_ == 2) && (personBuilder_ != null)) {
+          return personBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataBodyCase_ == 2) {
+            return (com.kingsoft.netty.sixthexample.MyDataInfo.Person) dataBody_;
+          }
+          return com.kingsoft.netty.sixthexample.MyDataInfo.Person.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Person person = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.kingsoft.netty.sixthexample.MyDataInfo.Person, com.kingsoft.netty.sixthexample.MyDataInfo.Person.Builder, com.kingsoft.netty.sixthexample.MyDataInfo.PersonOrBuilder> 
+          getPersonFieldBuilder() {
+        if (personBuilder_ == null) {
+          if (!(dataBodyCase_ == 2)) {
+            dataBody_ = com.kingsoft.netty.sixthexample.MyDataInfo.Person.getDefaultInstance();
+          }
+          personBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.kingsoft.netty.sixthexample.MyDataInfo.Person, com.kingsoft.netty.sixthexample.MyDataInfo.Person.Builder, com.kingsoft.netty.sixthexample.MyDataInfo.PersonOrBuilder>(
+                  (com.kingsoft.netty.sixthexample.MyDataInfo.Person) dataBody_,
+                  getParentForChildren(),
+                  isClean());
+          dataBody_ = null;
+        }
+        dataBodyCase_ = 2;
+        onChanged();;
+        return personBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.kingsoft.netty.sixthexample.MyDataInfo.Dog, com.kingsoft.netty.sixthexample.MyDataInfo.Dog.Builder, com.kingsoft.netty.sixthexample.MyDataInfo.DogOrBuilder> dogBuilder_;
+      /**
+       * <code>optional .com.kingsoft.protobuf.Dog dog = 3;</code>
+       */
+      public boolean hasDog() {
+        return dataBodyCase_ == 3;
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Dog dog = 3;</code>
+       */
+      public com.kingsoft.netty.sixthexample.MyDataInfo.Dog getDog() {
+        if (dogBuilder_ == null) {
+          if (dataBodyCase_ == 3) {
+            return (com.kingsoft.netty.sixthexample.MyDataInfo.Dog) dataBody_;
+          }
+          return com.kingsoft.netty.sixthexample.MyDataInfo.Dog.getDefaultInstance();
+        } else {
+          if (dataBodyCase_ == 3) {
+            return dogBuilder_.getMessage();
+          }
+          return com.kingsoft.netty.sixthexample.MyDataInfo.Dog.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Dog dog = 3;</code>
+       */
+      public Builder setDog(com.kingsoft.netty.sixthexample.MyDataInfo.Dog value) {
+        if (dogBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataBody_ = value;
+          onChanged();
+        } else {
+          dogBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Dog dog = 3;</code>
+       */
+      public Builder setDog(
+          com.kingsoft.netty.sixthexample.MyDataInfo.Dog.Builder builderForValue) {
+        if (dogBuilder_ == null) {
+          dataBody_ = builderForValue.build();
+          onChanged();
+        } else {
+          dogBuilder_.setMessage(builderForValue.build());
+        }
+        dataBodyCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Dog dog = 3;</code>
+       */
+      public Builder mergeDog(com.kingsoft.netty.sixthexample.MyDataInfo.Dog value) {
+        if (dogBuilder_ == null) {
+          if (dataBodyCase_ == 3 &&
+              dataBody_ != com.kingsoft.netty.sixthexample.MyDataInfo.Dog.getDefaultInstance()) {
+            dataBody_ = com.kingsoft.netty.sixthexample.MyDataInfo.Dog.newBuilder((com.kingsoft.netty.sixthexample.MyDataInfo.Dog) dataBody_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            dataBody_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataBodyCase_ == 3) {
+            dogBuilder_.mergeFrom(value);
+          }
+          dogBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Dog dog = 3;</code>
+       */
+      public Builder clearDog() {
+        if (dogBuilder_ == null) {
+          if (dataBodyCase_ == 3) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataBodyCase_ == 3) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+          }
+          dogBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Dog dog = 3;</code>
+       */
+      public com.kingsoft.netty.sixthexample.MyDataInfo.Dog.Builder getDogBuilder() {
+        return getDogFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Dog dog = 3;</code>
+       */
+      public com.kingsoft.netty.sixthexample.MyDataInfo.DogOrBuilder getDogOrBuilder() {
+        if ((dataBodyCase_ == 3) && (dogBuilder_ != null)) {
+          return dogBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataBodyCase_ == 3) {
+            return (com.kingsoft.netty.sixthexample.MyDataInfo.Dog) dataBody_;
+          }
+          return com.kingsoft.netty.sixthexample.MyDataInfo.Dog.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.Dog dog = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.kingsoft.netty.sixthexample.MyDataInfo.Dog, com.kingsoft.netty.sixthexample.MyDataInfo.Dog.Builder, com.kingsoft.netty.sixthexample.MyDataInfo.DogOrBuilder> 
+          getDogFieldBuilder() {
+        if (dogBuilder_ == null) {
+          if (!(dataBodyCase_ == 3)) {
+            dataBody_ = com.kingsoft.netty.sixthexample.MyDataInfo.Dog.getDefaultInstance();
+          }
+          dogBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.kingsoft.netty.sixthexample.MyDataInfo.Dog, com.kingsoft.netty.sixthexample.MyDataInfo.Dog.Builder, com.kingsoft.netty.sixthexample.MyDataInfo.DogOrBuilder>(
+                  (com.kingsoft.netty.sixthexample.MyDataInfo.Dog) dataBody_,
+                  getParentForChildren(),
+                  isClean());
+          dataBody_ = null;
+        }
+        dataBodyCase_ = 3;
+        onChanged();;
+        return dogBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.kingsoft.netty.sixthexample.MyDataInfo.House, com.kingsoft.netty.sixthexample.MyDataInfo.House.Builder, com.kingsoft.netty.sixthexample.MyDataInfo.HouseOrBuilder> houseBuilder_;
+      /**
+       * <code>optional .com.kingsoft.protobuf.House house = 4;</code>
+       */
+      public boolean hasHouse() {
+        return dataBodyCase_ == 4;
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.House house = 4;</code>
+       */
+      public com.kingsoft.netty.sixthexample.MyDataInfo.House getHouse() {
+        if (houseBuilder_ == null) {
+          if (dataBodyCase_ == 4) {
+            return (com.kingsoft.netty.sixthexample.MyDataInfo.House) dataBody_;
+          }
+          return com.kingsoft.netty.sixthexample.MyDataInfo.House.getDefaultInstance();
+        } else {
+          if (dataBodyCase_ == 4) {
+            return houseBuilder_.getMessage();
+          }
+          return com.kingsoft.netty.sixthexample.MyDataInfo.House.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.House house = 4;</code>
+       */
+      public Builder setHouse(com.kingsoft.netty.sixthexample.MyDataInfo.House value) {
+        if (houseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataBody_ = value;
+          onChanged();
+        } else {
+          houseBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.House house = 4;</code>
+       */
+      public Builder setHouse(
+          com.kingsoft.netty.sixthexample.MyDataInfo.House.Builder builderForValue) {
+        if (houseBuilder_ == null) {
+          dataBody_ = builderForValue.build();
+          onChanged();
+        } else {
+          houseBuilder_.setMessage(builderForValue.build());
+        }
+        dataBodyCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.House house = 4;</code>
+       */
+      public Builder mergeHouse(com.kingsoft.netty.sixthexample.MyDataInfo.House value) {
+        if (houseBuilder_ == null) {
+          if (dataBodyCase_ == 4 &&
+              dataBody_ != com.kingsoft.netty.sixthexample.MyDataInfo.House.getDefaultInstance()) {
+            dataBody_ = com.kingsoft.netty.sixthexample.MyDataInfo.House.newBuilder((com.kingsoft.netty.sixthexample.MyDataInfo.House) dataBody_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            dataBody_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataBodyCase_ == 4) {
+            houseBuilder_.mergeFrom(value);
+          }
+          houseBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.House house = 4;</code>
+       */
+      public Builder clearHouse() {
+        if (houseBuilder_ == null) {
+          if (dataBodyCase_ == 4) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataBodyCase_ == 4) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+          }
+          houseBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.House house = 4;</code>
+       */
+      public com.kingsoft.netty.sixthexample.MyDataInfo.House.Builder getHouseBuilder() {
+        return getHouseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.House house = 4;</code>
+       */
+      public com.kingsoft.netty.sixthexample.MyDataInfo.HouseOrBuilder getHouseOrBuilder() {
+        if ((dataBodyCase_ == 4) && (houseBuilder_ != null)) {
+          return houseBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataBodyCase_ == 4) {
+            return (com.kingsoft.netty.sixthexample.MyDataInfo.House) dataBody_;
+          }
+          return com.kingsoft.netty.sixthexample.MyDataInfo.House.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.kingsoft.protobuf.House house = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.kingsoft.netty.sixthexample.MyDataInfo.House, com.kingsoft.netty.sixthexample.MyDataInfo.House.Builder, com.kingsoft.netty.sixthexample.MyDataInfo.HouseOrBuilder> 
+          getHouseFieldBuilder() {
+        if (houseBuilder_ == null) {
+          if (!(dataBodyCase_ == 4)) {
+            dataBody_ = com.kingsoft.netty.sixthexample.MyDataInfo.House.getDefaultInstance();
+          }
+          houseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.kingsoft.netty.sixthexample.MyDataInfo.House, com.kingsoft.netty.sixthexample.MyDataInfo.House.Builder, com.kingsoft.netty.sixthexample.MyDataInfo.HouseOrBuilder>(
+                  (com.kingsoft.netty.sixthexample.MyDataInfo.House) dataBody_,
+                  getParentForChildren(),
+                  isClean());
+          dataBody_ = null;
+        }
+        dataBodyCase_ = 4;
+        onChanged();;
+        return houseBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.kingsoft.protobuf.MyMessage)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.kingsoft.protobuf.MyMessage)
+    private static final com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage();
+    }
+
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<MyMessage>
+        PARSER = new com.google.protobuf.AbstractParser<MyMessage>() {
+      public MyMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new MyMessage(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MyMessage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MyMessage> getParserForType() {
+      return PARSER;
+    }
+
+    public com.kingsoft.netty.sixthexample.MyDataInfo.MyMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface PersonOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.kingsoft.protobuf.Person)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      */
     boolean hasName();
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      */
     java.lang.String getName();
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -145,13 +1459,13 @@ public final class MyDataInfo {
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      */
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -168,7 +1482,7 @@ public final class MyDataInfo {
       }
     }
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -247,10 +1561,6 @@ public final class MyDataInfo {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -571,9 +1881,6 @@ public final class MyDataInfo {
       }
 
       public final boolean isInitialized() {
-        if (!hasName()) {
-          return false;
-        }
         return true;
       }
 
@@ -598,13 +1905,13 @@ public final class MyDataInfo {
 
       private java.lang.Object name_ = "";
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
        */
       public boolean hasName() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -621,7 +1928,7 @@ public final class MyDataInfo {
         }
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -637,7 +1944,7 @@ public final class MyDataInfo {
         }
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
        */
       public Builder setName(
           java.lang.String value) {
@@ -650,7 +1957,7 @@ public final class MyDataInfo {
         return this;
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
        */
       public Builder clearName() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -659,7 +1966,7 @@ public final class MyDataInfo {
         return this;
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -828,11 +2135,1466 @@ public final class MyDataInfo {
 
   }
 
+  public interface DogOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.kingsoft.protobuf.Dog)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    boolean hasName();
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>optional string action = 2;</code>
+     */
+    boolean hasAction();
+    /**
+     * <code>optional string action = 2;</code>
+     */
+    java.lang.String getAction();
+    /**
+     * <code>optional string action = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getActionBytes();
+  }
+  /**
+   * Protobuf type {@code com.kingsoft.protobuf.Dog}
+   */
+  public  static final class Dog extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.kingsoft.protobuf.Dog)
+      DogOrBuilder {
+    // Use Dog.newBuilder() to construct.
+    private Dog(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Dog() {
+      name_ = "";
+      action_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Dog(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              name_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              action_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.kingsoft.netty.sixthexample.MyDataInfo.internal_static_com_kingsoft_protobuf_Dog_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.kingsoft.netty.sixthexample.MyDataInfo.internal_static_com_kingsoft_protobuf_Dog_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.kingsoft.netty.sixthexample.MyDataInfo.Dog.class, com.kingsoft.netty.sixthexample.MyDataInfo.Dog.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          name_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ACTION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object action_;
+    /**
+     * <code>optional string action = 2;</code>
+     */
+    public boolean hasAction() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string action = 2;</code>
+     */
+    public java.lang.String getAction() {
+      java.lang.Object ref = action_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          action_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string action = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getActionBytes() {
+      java.lang.Object ref = action_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        action_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, action_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, action_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.kingsoft.netty.sixthexample.MyDataInfo.Dog)) {
+        return super.equals(obj);
+      }
+      com.kingsoft.netty.sixthexample.MyDataInfo.Dog other = (com.kingsoft.netty.sixthexample.MyDataInfo.Dog) obj;
+
+      boolean result = true;
+      result = result && (hasName() == other.hasName());
+      if (hasName()) {
+        result = result && getName()
+            .equals(other.getName());
+      }
+      result = result && (hasAction() == other.hasAction());
+      if (hasAction()) {
+        result = result && getAction()
+            .equals(other.getAction());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasName()) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+      }
+      if (hasAction()) {
+        hash = (37 * hash) + ACTION_FIELD_NUMBER;
+        hash = (53 * hash) + getAction().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.Dog parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.Dog parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.Dog parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.Dog parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.Dog parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.Dog parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.Dog parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.Dog parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.Dog parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.Dog parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.Dog parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.Dog parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.kingsoft.netty.sixthexample.MyDataInfo.Dog prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.kingsoft.protobuf.Dog}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.kingsoft.protobuf.Dog)
+        com.kingsoft.netty.sixthexample.MyDataInfo.DogOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.kingsoft.netty.sixthexample.MyDataInfo.internal_static_com_kingsoft_protobuf_Dog_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.kingsoft.netty.sixthexample.MyDataInfo.internal_static_com_kingsoft_protobuf_Dog_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.kingsoft.netty.sixthexample.MyDataInfo.Dog.class, com.kingsoft.netty.sixthexample.MyDataInfo.Dog.Builder.class);
+      }
+
+      // Construct using com.kingsoft.netty.sixthexample.MyDataInfo.Dog.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        action_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.kingsoft.netty.sixthexample.MyDataInfo.internal_static_com_kingsoft_protobuf_Dog_descriptor;
+      }
+
+      public com.kingsoft.netty.sixthexample.MyDataInfo.Dog getDefaultInstanceForType() {
+        return com.kingsoft.netty.sixthexample.MyDataInfo.Dog.getDefaultInstance();
+      }
+
+      public com.kingsoft.netty.sixthexample.MyDataInfo.Dog build() {
+        com.kingsoft.netty.sixthexample.MyDataInfo.Dog result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.kingsoft.netty.sixthexample.MyDataInfo.Dog buildPartial() {
+        com.kingsoft.netty.sixthexample.MyDataInfo.Dog result = new com.kingsoft.netty.sixthexample.MyDataInfo.Dog(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.name_ = name_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.action_ = action_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.kingsoft.netty.sixthexample.MyDataInfo.Dog) {
+          return mergeFrom((com.kingsoft.netty.sixthexample.MyDataInfo.Dog)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.kingsoft.netty.sixthexample.MyDataInfo.Dog other) {
+        if (other == com.kingsoft.netty.sixthexample.MyDataInfo.Dog.getDefaultInstance()) return this;
+        if (other.hasName()) {
+          bitField0_ |= 0x00000001;
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.hasAction()) {
+          bitField0_ |= 0x00000002;
+          action_ = other.action_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.kingsoft.netty.sixthexample.MyDataInfo.Dog parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.kingsoft.netty.sixthexample.MyDataInfo.Dog) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder clearName() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object action_ = "";
+      /**
+       * <code>optional string action = 2;</code>
+       */
+      public boolean hasAction() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string action = 2;</code>
+       */
+      public java.lang.String getAction() {
+        java.lang.Object ref = action_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            action_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string action = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getActionBytes() {
+        java.lang.Object ref = action_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          action_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string action = 2;</code>
+       */
+      public Builder setAction(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        action_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string action = 2;</code>
+       */
+      public Builder clearAction() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        action_ = getDefaultInstance().getAction();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string action = 2;</code>
+       */
+      public Builder setActionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        action_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.kingsoft.protobuf.Dog)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.kingsoft.protobuf.Dog)
+    private static final com.kingsoft.netty.sixthexample.MyDataInfo.Dog DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.kingsoft.netty.sixthexample.MyDataInfo.Dog();
+    }
+
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.Dog getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<Dog>
+        PARSER = new com.google.protobuf.AbstractParser<Dog>() {
+      public Dog parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Dog(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Dog> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Dog> getParserForType() {
+      return PARSER;
+    }
+
+    public com.kingsoft.netty.sixthexample.MyDataInfo.Dog getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface HouseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.kingsoft.protobuf.House)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    boolean hasName();
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>optional string city = 2;</code>
+     */
+    boolean hasCity();
+    /**
+     * <code>optional string city = 2;</code>
+     */
+    java.lang.String getCity();
+    /**
+     * <code>optional string city = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getCityBytes();
+  }
+  /**
+   * Protobuf type {@code com.kingsoft.protobuf.House}
+   */
+  public  static final class House extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.kingsoft.protobuf.House)
+      HouseOrBuilder {
+    // Use House.newBuilder() to construct.
+    private House(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private House() {
+      name_ = "";
+      city_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private House(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              name_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              city_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.kingsoft.netty.sixthexample.MyDataInfo.internal_static_com_kingsoft_protobuf_House_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.kingsoft.netty.sixthexample.MyDataInfo.internal_static_com_kingsoft_protobuf_House_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.kingsoft.netty.sixthexample.MyDataInfo.House.class, com.kingsoft.netty.sixthexample.MyDataInfo.House.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          name_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CITY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object city_;
+    /**
+     * <code>optional string city = 2;</code>
+     */
+    public boolean hasCity() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string city = 2;</code>
+     */
+    public java.lang.String getCity() {
+      java.lang.Object ref = city_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          city_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string city = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCityBytes() {
+      java.lang.Object ref = city_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        city_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, city_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, city_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.kingsoft.netty.sixthexample.MyDataInfo.House)) {
+        return super.equals(obj);
+      }
+      com.kingsoft.netty.sixthexample.MyDataInfo.House other = (com.kingsoft.netty.sixthexample.MyDataInfo.House) obj;
+
+      boolean result = true;
+      result = result && (hasName() == other.hasName());
+      if (hasName()) {
+        result = result && getName()
+            .equals(other.getName());
+      }
+      result = result && (hasCity() == other.hasCity());
+      if (hasCity()) {
+        result = result && getCity()
+            .equals(other.getCity());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasName()) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+      }
+      if (hasCity()) {
+        hash = (37 * hash) + CITY_FIELD_NUMBER;
+        hash = (53 * hash) + getCity().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.House parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.House parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.House parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.House parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.House parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.House parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.House parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.House parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.House parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.House parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.House parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.House parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.kingsoft.netty.sixthexample.MyDataInfo.House prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.kingsoft.protobuf.House}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.kingsoft.protobuf.House)
+        com.kingsoft.netty.sixthexample.MyDataInfo.HouseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.kingsoft.netty.sixthexample.MyDataInfo.internal_static_com_kingsoft_protobuf_House_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.kingsoft.netty.sixthexample.MyDataInfo.internal_static_com_kingsoft_protobuf_House_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.kingsoft.netty.sixthexample.MyDataInfo.House.class, com.kingsoft.netty.sixthexample.MyDataInfo.House.Builder.class);
+      }
+
+      // Construct using com.kingsoft.netty.sixthexample.MyDataInfo.House.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        city_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.kingsoft.netty.sixthexample.MyDataInfo.internal_static_com_kingsoft_protobuf_House_descriptor;
+      }
+
+      public com.kingsoft.netty.sixthexample.MyDataInfo.House getDefaultInstanceForType() {
+        return com.kingsoft.netty.sixthexample.MyDataInfo.House.getDefaultInstance();
+      }
+
+      public com.kingsoft.netty.sixthexample.MyDataInfo.House build() {
+        com.kingsoft.netty.sixthexample.MyDataInfo.House result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.kingsoft.netty.sixthexample.MyDataInfo.House buildPartial() {
+        com.kingsoft.netty.sixthexample.MyDataInfo.House result = new com.kingsoft.netty.sixthexample.MyDataInfo.House(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.name_ = name_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.city_ = city_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.kingsoft.netty.sixthexample.MyDataInfo.House) {
+          return mergeFrom((com.kingsoft.netty.sixthexample.MyDataInfo.House)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.kingsoft.netty.sixthexample.MyDataInfo.House other) {
+        if (other == com.kingsoft.netty.sixthexample.MyDataInfo.House.getDefaultInstance()) return this;
+        if (other.hasName()) {
+          bitField0_ |= 0x00000001;
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.hasCity()) {
+          bitField0_ |= 0x00000002;
+          city_ = other.city_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.kingsoft.netty.sixthexample.MyDataInfo.House parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.kingsoft.netty.sixthexample.MyDataInfo.House) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder clearName() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object city_ = "";
+      /**
+       * <code>optional string city = 2;</code>
+       */
+      public boolean hasCity() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string city = 2;</code>
+       */
+      public java.lang.String getCity() {
+        java.lang.Object ref = city_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            city_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string city = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCityBytes() {
+        java.lang.Object ref = city_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          city_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string city = 2;</code>
+       */
+      public Builder setCity(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        city_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string city = 2;</code>
+       */
+      public Builder clearCity() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        city_ = getDefaultInstance().getCity();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string city = 2;</code>
+       */
+      public Builder setCityBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        city_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.kingsoft.protobuf.House)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.kingsoft.protobuf.House)
+    private static final com.kingsoft.netty.sixthexample.MyDataInfo.House DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.kingsoft.netty.sixthexample.MyDataInfo.House();
+    }
+
+    public static com.kingsoft.netty.sixthexample.MyDataInfo.House getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<House>
+        PARSER = new com.google.protobuf.AbstractParser<House>() {
+      public House parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new House(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<House> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<House> getParserForType() {
+      return PARSER;
+    }
+
+    public com.kingsoft.netty.sixthexample.MyDataInfo.House getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_kingsoft_protobuf_MyMessage_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_kingsoft_protobuf_MyMessage_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_kingsoft_protobuf_Person_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_kingsoft_protobuf_Person_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_kingsoft_protobuf_Dog_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_kingsoft_protobuf_Dog_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_kingsoft_protobuf_House_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_kingsoft_protobuf_House_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -843,9 +3605,18 @@ public final class MyDataInfo {
   static {
     java.lang.String[] descriptorData = {
       "\n\031src/protobuf/Person.proto\022\025com.kingsof" +
-      "t.protobuf\"4\n\006Person\022\014\n\004name\030\001 \002(\t\022\013\n\003ag" +
-      "e\030\002 \001(\005\022\017\n\007address\030\003 \001(\tB/\n\037com.kingsoft" +
-      ".netty.sixthexampleB\nMyDataInfoH\001"
+      "t.protobuf\"\230\002\n\tMyMessage\022<\n\tdata_type\030\001 " +
+      "\002(\0162).com.kingsoft.protobuf.MyMessage.Da" +
+      "taType\022/\n\006person\030\002 \001(\0132\035.com.kingsoft.pr" +
+      "otobuf.PersonH\000\022)\n\003dog\030\003 \001(\0132\032.com.kings" +
+      "oft.protobuf.DogH\000\022-\n\005house\030\004 \001(\0132\034.com." +
+      "kingsoft.protobuf.HouseH\000\"6\n\010DataType\022\016\n" +
+      "\nPersonType\020\001\022\013\n\007DogType\020\002\022\r\n\tHouseType\020" +
+      "\003B\n\n\010dataBody\"4\n\006Person\022\014\n\004name\030\001 \001(\t\022\013\n" +
+      "\003age\030\002 \001(\005\022\017\n\007address\030\003 \001(\t\"#\n\003Dog\022\014\n\004na",
+      "me\030\001 \001(\t\022\016\n\006action\030\002 \001(\t\"#\n\005House\022\014\n\004nam" +
+      "e\030\001 \001(\t\022\014\n\004city\030\002 \001(\tB/\n\037com.kingsoft.ne" +
+      "tty.sixthexampleB\nMyDataInfoH\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -859,12 +3630,30 @@ public final class MyDataInfo {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_com_kingsoft_protobuf_Person_descriptor =
+    internal_static_com_kingsoft_protobuf_MyMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_com_kingsoft_protobuf_MyMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_kingsoft_protobuf_MyMessage_descriptor,
+        new java.lang.String[] { "DataType", "Person", "Dog", "House", "DataBody", });
+    internal_static_com_kingsoft_protobuf_Person_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_com_kingsoft_protobuf_Person_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_kingsoft_protobuf_Person_descriptor,
         new java.lang.String[] { "Name", "Age", "Address", });
+    internal_static_com_kingsoft_protobuf_Dog_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_com_kingsoft_protobuf_Dog_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_kingsoft_protobuf_Dog_descriptor,
+        new java.lang.String[] { "Name", "Action", });
+    internal_static_com_kingsoft_protobuf_House_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_com_kingsoft_protobuf_House_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_kingsoft_protobuf_House_descriptor,
+        new java.lang.String[] { "Name", "City", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

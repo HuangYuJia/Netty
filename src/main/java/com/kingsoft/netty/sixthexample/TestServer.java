@@ -16,9 +16,6 @@ import io.netty.handler.logging.LoggingHandler;
  * @Version 1.0
  **/
 
-/**
- * 服务器端
- */
 public class TestServer {
 
     public static void main(String[] args) throws Exception {

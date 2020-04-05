@@ -20,10 +20,10 @@ public class TestClientInitializer extends ChannelInitializer<SocketChannel> {
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
         ChannelPipeline pipeline = ch.pipeline();
-        pipeline.addLast(new ProtobufVarint32FrameDecoder());
-        pipeline.addLast(new ProtobufDecoder(MyDataInfo.Person.getDefaultInstance()));
-        pipeline.addLast(new ProtobufVarint32LengthFieldPrepender());
-        pipeline.addLast(new ProtobufEncoder());
+        pipeline.addLast("protobufVarint32FrameDecoder", new ProtobufVarint32FrameDecoder());
+        pipeline.addLast("protobufDecoder", new ProtobufDecoder(MyDataInfo.MyMessage.getDefaultInstance()));  // 解码
+        pipeline.addLast("protobufVarint32LengthFieldPrepender", new ProtobufVarint32LengthFieldPrepender());
+        pipeline.addLast("protobufEncoder", new ProtobufEncoder());
         pipeline.addLast(new TestClientHandler());
     }
 }

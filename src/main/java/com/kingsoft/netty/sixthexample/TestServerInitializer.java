@@ -21,7 +21,7 @@ public class TestServerInitializer extends ChannelInitializer<SocketChannel> {
     protected void initChannel(SocketChannel ch) throws Exception {
         ChannelPipeline pipeline = ch.pipeline();
         pipeline.addLast("protobufVarint32FrameDecoder", new ProtobufVarint32FrameDecoder());
-        pipeline.addLast("protobufDecoder", new ProtobufDecoder(MyDataInfo.Person.getDefaultInstance()));  // 解码
+        pipeline.addLast("protobufDecoder", new ProtobufDecoder(MyDataInfo.MyMessage.getDefaultInstance()));  // 解码
         pipeline.addLast("protobufVarint32LengthFieldPrepender", new ProtobufVarint32LengthFieldPrepender());
         pipeline.addLast("protobufEncoder", new ProtobufEncoder());
         pipeline.addLast("testServerHandler", new TestServerHandler());
