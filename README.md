@@ -1,4 +1,5 @@
 ## netty
+- https://search.maven.org/
 
 - netty is asynchronous event-driven network application framework
 - netty 异步 事件驱动 网络应用框架
@@ -16,7 +17,7 @@
 
 - http1.1(keep-alive机制,一定程度上解决短链接的问题) 长链接(一段时间内有请求就使用原来的链接,否则新建立链接) 
 - http1.0 短链接 无状态 基于请求响应(客户端主动发出数据 服务器段不可能主动发出数据)  必须传递header等信息
-- websocket长链接 即时通讯(聊天)  允许只传递数据本身而不需要传递header等,极大程度上降低数据传输的压力  (主动关闭双方是能感知的)  
+- websocket长链接,即时通讯(聊天)允许只传递数据本身而不需要传递header等,极大程度上降低数据传输的压力(主动关闭双方是能感知的)  
 - (非主动)心跳检测,定期时间内没有心跳包,就会主动释放掉socket链接
 
 - netty:
@@ -36,6 +37,27 @@
 - PongWebSocketFrame  返回心跳
 - TextWebSocketFrame  普通文本
 
-- websocket一旦建立上以后,整个请求和响应都是已经存在的websocket长连接之上进行的,这个和以前所用的http区别是非常大的
+- websocket一旦建立上,整个请求和响应都是在已经存在的websocket长连接之上进行的,这个和http的区别是非常大的
 - 注意:开飞行模式或者非正常退出,客户端和服务器端之前的连接是感知不到断掉的...(通过心跳包来解决这一问题)
 - websocket注意事项：页面刷新长连接会被关闭,其实进入当前页面建立长连接的目的就是页面不需要用F5来刷新,所有数据自动实时刷新,如果还是用F5刷页面那就没有意义了
+- google protobuf 用来进行rpc的数据传输,是一种自定的协议,以更小的体积对数据进行编码解码(序列化和反序列化)
+- EJB 标准大量使用的技术 rmi remote method invocation远程方法调用,只针对Java
+- RPC remote procedure call 远程过程调用,很多RPC框架是跨语言的
+
+PRC传输基于socket WebServlet基于http
+决定一个PRC框架的性能强与弱的因素有:1.编解码效率 2.socket传输
+- RPC编写模式:
+- 1.定义一个接口说明文件;描述了对象(结构体),对象成员,接口方法等一系列信息
+- 2.通过RPC框架所提供的编译器,将接口说明文件编译成具体语言文件
+- 3.在客户端与服务器端分别引入RPC编译器所生成的文件,即可像调用本地方法一样调用远程方法
+
+
+- rpc框架 google protobuf(Protocol Buffers)是一种语言中立平台中立,对结构化数据进行序列化可扩展的机制
+- netty对与google protobuf提供了原生的非常强大的支持,使得我们可以通过netty非常轻松的将google protobuf集成进来,因为编解码相关的事netty都已经做好了
+
+- google protobuf 使用
+- https://developers.google.com/protocol-buffers
+- https://github.com/protocolbuffers/protobuf/releases/tag/v3.3.0
+- https://developers.google.com/protocol-buffers/docs/javatutorial
+- https://developers.google.com/protocol-buffers/docs/proto
+
