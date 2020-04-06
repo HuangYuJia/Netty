@@ -17,7 +17,7 @@ public class PersonServiceImpl implements PersonService.Iface{
     public Person getPersonByUsername(String username) throws DataException, TException {
         System.out.println("getPersonByUsername : Get Client Param:" + username);
         Person person = new Person();
-        person.setUsername("张三");
+        person.setUsername(username);
         person.setAge(20);
         person.setMarried(false);
         return person;

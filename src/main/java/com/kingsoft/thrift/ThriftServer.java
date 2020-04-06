@@ -20,11 +20,11 @@ public class ThriftServer {
         // 异步非阻塞TNonblockingServerSocket
         TNonblockingServerSocket socket = new TNonblockingServerSocket(8899);
         THsHaServer.Args arg = new THsHaServer.Args(socket).minWorkerThreads(2).maxWorkerThreads(4);
-        PersonService.Processor<PersonServiceImpl> processor = new PersonService.Processor<>(new PersonServiceImpl());
-        arg.protocolFactory(new TCompactProtocol.Factory());
-        arg.transportFactory(new TFramedTransport.Factory());
+        PersonService.Processor<PersonServiceImpl> processor = new PersonService.Processor<>(new PersonServiceImpl());  // 处理器
+        arg.protocolFactory(new TCompactProtocol.Factory());  // 协议层
+        arg.transportFactory(new TFramedTransport.Factory());  // 传输层 以frame为单位进行传输,非阻塞式服务中使用
         arg.processorFactory(new TProcessorFactory(processor));
-        TServer server = new THsHaServer(arg);
+        TServer server = new THsHaServer(arg);   // THsHaServer 半同步半异步
         System.out.println("Thrift Server Started");
         server.serve();
     }

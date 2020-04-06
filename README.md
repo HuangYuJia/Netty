@@ -25,6 +25,7 @@
 - 2.长连接的服务器,基于websocket
 - 3.http服务器,不是基于servlet规范
 
+- https://services.gradle.org/distributions/
 - C:\Users\黄育佳\.gradle\caches\modules-2\files-2.1\io.netty\netty-all\4.1.10.Final
 
 - netty客户端请求完成后通过判断是http1.1(长链接keep-alive时间长度)或者1.0(短连接)来控制服务器和客户端断开
